@@ -1,69 +1,69 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-   --main
-   local Window = OrionLib:MakeWindow({Name = "Isle HUB Beta", HidePremium = false, SaveConfig = true, ConfigFolder = "Isle 10 HUB"})
-   --tabs
-   local VisualTab = Window:MakeTab({
-   Name = "Visual",
-   Icon = "rbxassetid://4483345998",
-   PremiumOnly = false
-   })
-   local TPTab = Window:MakeTab({
-    Name = "Teleport",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-    })
-    local Section = TPTab:AddSection({
-    Name = "TP"
-    })
- local PYTab = Window:MakeTab({
-    Name = "Pylons",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-    })
-    local MiscTab = Window:MakeTab({
-    Name = "Misc",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-    })
-    local OthersTab = Window:MakeTab({
-        Name = "Others",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-        })
-    --scripts
-    local Section = MiscTab:AddSection({
-    Name = "Misc"
-    })
-   local Section = OthersTab:AddSection({
-   Name = "Others"
-   })
- local Section = PYTab:AddSection({
-   Name = "Pylons"
-   })
-   MiscTab:AddParagraph("warning","don't go too fast or you'll get kicked")
-   OthersTab:AddParagraph("infiniteYield","use infinite yield to fly (-fly (speed) ), use noclip (-noclip )and other things")
-   OthersTab:AddButton({
+--main
+local Window = OrionLib:MakeWindow({Name = "Isle HUB Beta", HidePremium = false, SaveConfig = true, ConfigFolder = "Isle 10 HUB"})
+--tabs
+local VisualTab = Window:MakeTab({
+	Name = "Visual",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local TPTab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = TPTab:AddSection({
+	Name = "TP"
+})
+local PYTab = Window:MakeTab({
+	Name = "Pylons",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local OthersTab = Window:MakeTab({
+	Name = "Others",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+--scripts
+local Section = MiscTab:AddSection({
+	Name = "Misc"
+})
+local Section = OthersTab:AddSection({
+	Name = "Others"
+})
+local Section = PYTab:AddSection({
+	Name = "Pylons"
+})
+MiscTab:AddParagraph("warning","don't go too fast or you'll get kicked")
+OthersTab:AddParagraph("infiniteYield","use infinite yield to fly (-fly (speed) ), use noclip (-noclip )and other things")
+OthersTab:AddButton({
 	Name = "infiniteyield",
 	Callback = function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-  	end    
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	end    
 })
 MiscTab:AddSlider({
-    Name = "walkspeed",
-    Min = 0,
-    Max = 50,
-    Default = 16,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    ValueName = "walkspeed",
-    Callback = function(Value)
-        local player = game.Players.LocalPlayer
-        if player and player.Character and player.Character:FindFirstChild("Humanoid") then
-            local humanoid = player.Character.Humanoid
-            humanoid.WalkSpeed = Value
-            print("WalkSpeed ajustado para:", Value)
-        end
-    end    
+	Name = "walkspeed",
+	Min = 0,
+	Max = 50,
+	Default = 16,
+	Color = Color3.fromRGB(255, 255, 255),
+	Increment = 1,
+	ValueName = "walkspeed",
+	Callback = function(Value)
+		local player = game.Players.LocalPlayer
+		if player and player.Character and player.Character:FindFirstChild("Humanoid") then
+			local humanoid = player.Character.Humanoid
+			humanoid.WalkSpeed = Value
+			print("WalkSpeed ajustado para:", Value)
+		end
+	end    
 })
 MiscTab:AddSlider({ 
 	Name = "jump power", 
@@ -84,356 +84,217 @@ MiscTab:AddSlider({
 
 
 VisualTab:AddButton({
-   Name = "artifact c",
-   Callback = function()
-       local BoolValue = Instance.new("BoolValue")
-       BoolValue.Name = "WisdomArtifact"
-       BoolValue.Parent = game.Players.LocalPlayer.Character
-   end  -- Fecha o Callback aqui
+	Name = "artifact c",
+	Callback = function()
+		local BoolValue = Instance.new("BoolValue")
+		BoolValue.Name = "WisdomArtifact"
+		BoolValue.Parent = game.Players.LocalPlayer.Character
+	end  -- Fecha o Callback aqui
 }) -- Fecha o AddButton aqui
 VisualTab:AddButton({
-    Name = "always day",
-    Callback = function()
--- Obter a referência ao Lighting
-local lighting = game:GetService("Lighting")
+	Name = "always day",
+	Callback = function()
+		-- Obter a referência ao Lighting
+		local lighting = game:GetService("Lighting")
 
--- Configurar o horário fixo (ex: 14 = 14:00)
-local fixedTime = 14
+		-- Configurar o horário fixo (ex: 14 = 14:00)
+		local fixedTime = 14
 
--- Desativar mudanças automáticas no ciclo de tempo
-lighting.ClockTime = fixedTime
-lighting.TimeOfDay = string.format("%02d:00:00", fixedTime)
-lighting.GeographicLatitude = 0 -- Mantém o Sol fixo
-lighting.Brightness = 2 -- Ajustar a iluminação conforme necessário
+		-- Desativar mudanças automáticas no ciclo de tempo
+		lighting.ClockTime = fixedTime
+		lighting.TimeOfDay = string.format("%02d:00:00", fixedTime)
+		lighting.GeographicLatitude = 0 -- Mantém o Sol fixo
+		lighting.Brightness = 2 -- Ajustar a iluminação conforme necessário
 
--- Bloquear alterações no ClockTime
-lighting:GetPropertyChangedSignal("ClockTime"):Connect(function()
-    lighting.ClockTime = fixedTime
-end)
+		-- Bloquear alterações no ClockTime
+		lighting:GetPropertyChangedSignal("ClockTime"):Connect(function()
+			lighting.ClockTime = fixedTime
+		end)
 
-    end  -- Fecha o Callback aqui
- }) -- Fecha o AddButton aqui
+	end  -- Fecha o Callback aqui
+}) -- Fecha o AddButton aqui
+
+function teleportPlayer(targetPosition)
+	local player = game.Players.LocalPlayer  -- Acessa o jogador local
+
+	-- Verifica se o jogador e o personagem estão carregados
+	if player and player.Character then
+		local character = player.Character
+		local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
+
+		-- Teleporta o jogador para as coordenadas definidas
+		humanoidRootPart.CFrame = targetPosition
+	else
+		warn("Jogador ou personagem não encontrado.")
+	end
+end
 
 TPTab:AddButton({
 	Name = "teleport generator",
 	Callback = function()
-        local targetPosition = Vector3.new(505, -7, -505)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(505, -7, -505))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport observatory",
 	Callback = function()
-        local targetPosition = Vector3.new(428, 125, -1188)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(428, 125, -1188))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport warehouse",
 	Callback = function()
-        local targetPosition = Vector3.new(-874, 59, -539)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-819, 62, -602))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport dock",
 	Callback = function()
-        local targetPosition = Vector3.new(-2035, 3, -1568)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-2035, 3, -1568))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport plane",
 	Callback = function()
-        local targetPosition = Vector3.new(-1996, 202, -520)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1996, 202, -520))
+	end    
+})
+TPTab:AddButton({
+	Name = "teleport upgrader",
+	Callback = function()
+		teleportPlayer(CFrame.new(-1666, -13, -531))
+	end    
+})
+TPTab:AddButton({
+	Name = "teleport dragon",
+	Callback = function()
+		teleportPlayer(CFrame.new(-1248, -51, -997))
+	end    
+})
+TPTab:AddButton({
+	Name = "teleport giver",
+	Callback = function()
+		teleportPlayer(CFrame.new(-762, 6 ,411))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport hangar",
 	Callback = function()
-        local targetPosition = Vector3.new(-1621, 21, -2332)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1621, 21, -2332))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport artifact c",
 	Callback = function()
-        local targetPosition = Vector3.new(-752, 124, -3173)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-752, 124, -3173))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport artifact d (need weapon)",
 	Callback = function()
-        local targetPosition = Vector3.new(-1772, -197, -1311)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1772, -197, -1311))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport artifact b",
 	Callback = function()
-        local targetPosition = Vector3.new(1400, -255, -1863)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(1400, -255, -1863))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport artifact a",
 	Callback = function()
-        local targetPosition = Vector3.new(-1354, -456, -1574)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1354, -456, -1574))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport bunker",
 	Callback = function()
-        local targetPosition = Vector3.new(-1499, 203, -1491)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1499, 203, -1491))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport drone",
 	Callback = function()
-        local targetPosition = Vector3.new(-120, 247, -2798)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-120, 247, -2798))
+	end    
 })
 TPTab:AddButton({
 	Name = "teleport facility",
 	Callback = function()
-        local targetPosition = Vector3.new(-1782, -187, -1419)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		teleportPlayer(CFrame.new(-1782, -187, -1419))
+	end    
 })
 PYTab:AddButton({
-	Name = "teleport buttons",
+	Name = "teleport buttons (dont move)",
 	Callback = function()
-        local targetPosition = Vector3.new(-1499, 203, -1491)
-        local function teleportPlayer()
-            local player = game.Players.LocalPlayer  -- Acessa o jogador local
-        
-            -- Verifica se o jogador e o personagem estão carregados
-            if player and player.Character then
-                local character = player.Character
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
-        
-                -- Teleporta o jogador para as coordenadas definidas
-                humanoidRootPart.CFrame = CFrame.new(targetPosition)
-            else
-                warn("Jogador ou personagem não encontrado.")
-            end
-        end
-        
-        -- Chama a função para teleportar o jogador
-        teleportPlayer()
-  	end    
+		local currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		teleportPlayer(game:GetService("Workspace").Map.Main.TheGlassDoorPuzzle.YellowPlate.Base.CFrame)
+		wait(1)
+		teleportPlayer(CFrame.new(-1583, -8, 998))
+		wait(1)
+		teleportPlayer(CFrame.new(-2225, -3, -852))
+		wait(1)
+		teleportPlayer(CFrame.new(-685, 149, -1052))
+		wait(1)
+		teleportPlayer(CFrame.new(766, -17, -1117))
+		wait(1)
+		teleportPlayer(currentpos)
+	end    
 })
+PYTab:AddButton({
+	Name = "teleport radio pylon",
+	Callback = function()
+		teleportPlayer(CFrame.new(-1392, -113, -1670))
+	end    
+})
+PYTab:AddButton({
+	Name = "teleport mineshaft pylon",
+	Callback = function()
+		teleportPlayer(CFrame.new(-1555, 88, -1183))
+	end    
+})
+local Section = PYTab:AddSection({
+	Name = "Parasites"
+})
+PYTab:AddButton({
+	Name = "sabotage armor",
+	Callback = function()
+		teleportPlayer(workspace.Map.Main.LeechContainer.Handle.CFrame)
+        wait(.5)
+        fireclickdetector(workspace.Map.Main.LeechContainer.Handle.ClickDetector)
+          wait(.5)
+        teleportPlayer(workspace.Map.Main.FrogContainer.Handle.CFrame)
+          wait(.5)
+        fireclickdetector(workspace.Map.Main.FrogContainer.Handle.ClickDetector)
+          wait(.5)
+        teleportPlayer(workspace.Map.Main.HornetContainer.Handle.CFrame)
+          wait(.5)
+        fireclickdetector(workspace.Map.Main.HornetContainer.Handle.ClickDetector)
+	end    
+})
+
+MiscTab:AddButton({
+	Name = "get all collectibles",
+	Callback = function()
+		for i, v in pairs(workspace.Map.Ignore.Collectibles:GetChildren()) do
+			if v:IsA("Model") then
+				if v.PrimaryPart ~= nil then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.PrimaryPart.CFrame
+                end 
+			else
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+			end
+			wait(.25)
+			for i , child in pairs(v:GetDescendants()) do
+				if child:IsA("ClickDetector") then
+					fireclickdetector(child)
+				end
+			end
+			wait(.25)
+		end
+	end	
+})
+
+
 OrionLib:Init()
