@@ -15,6 +15,14 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shle
     local Section = TPTab:AddSection({
     Name = "TP"
     })
+ local PYTab = Window:MakeTab({
+    Name = "Pylons",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+    })
+    local Section = PYTab:AddSection({
+    Name = "Pylons"
+    })
     local MiscTab = Window:MakeTab({
     Name = "Misc",
     Icon = "rbxassetid://4483345998",
@@ -32,7 +40,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shle
    local Section = OthersTab:AddSection({
    Name = "Others"
    })
-   MiscTab:AddParagraph("Warning","don't go too fast or you'll get kicked")
+   MiscTab:AddParagraph("warning","don't go too fast or you'll get kicked")
    OthersTab:AddParagraph("infiniteYield","use infinite yield to fly (-fly (speed) ), use noclip (-noclip )and other things")
    OthersTab:AddButton({
 	Name = "infiniteyield",
