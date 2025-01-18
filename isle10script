@@ -37,6 +37,9 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shle
    local Section = OthersTab:AddSection({
    Name = "Others"
    })
+ local Section = PYTab:AddSection({
+   Name = "Pylons"
+   })
    MiscTab:AddParagraph("warning","don't go too fast or you'll get kicked")
    OthersTab:AddParagraph("infiniteYield","use infinite yield to fly (-fly (speed) ), use noclip (-noclip )and other things")
    OthersTab:AddButton({
@@ -410,5 +413,27 @@ TPTab:AddButton({
         teleportPlayer()
   	end    
 })
-
+PYTab:AddButton({
+	Name = "teleport buttons",
+	Callback = function()
+        local targetPosition = Vector3.new(-1499, 203, -1491)
+        local function teleportPlayer()
+            local player = game.Players.LocalPlayer  -- Acessa o jogador local
+        
+            -- Verifica se o jogador e o personagem estão carregados
+            if player and player.Character then
+                local character = player.Character
+                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")  -- Encontra a parte principal do corpo
+        
+                -- Teleporta o jogador para as coordenadas definidas
+                humanoidRootPart.CFrame = CFrame.new(targetPosition)
+            else
+                warn("Jogador ou personagem não encontrado.")
+            end
+        end
+        
+        -- Chama a função para teleportar o jogador
+        teleportPlayer()
+  	end    
+})
 OrionLib:Init()
