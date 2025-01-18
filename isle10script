@@ -20,9 +20,6 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shle
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
     })
-    local Section = PYTab:AddSection({
-    Name = "Pylons"
-    })
     local MiscTab = Window:MakeTab({
     Name = "Misc",
     Icon = "rbxassetid://4483345998",
