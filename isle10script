@@ -1,10 +1,4 @@
--- Carregar a Orion Library
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-
-
    --main
    local Window = OrionLib:MakeWindow({Name = "Isle HUB Beta", HidePremium = false, SaveConfig = true, ConfigFolder = "Isle 10 HUB"})
    --tabs
@@ -38,7 +32,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
    local Section = OthersTab:AddSection({
    Name = "Others"
    })
-   MiscTab:AddParagraph("Warning","Don't be too fast or you'll get kicked")
+   MiscTab:AddParagraph("Warning","don't go too fast or you'll get kicked")
    OthersTab:AddParagraph("infiniteYield","use infinite yield to fly (-fly (speed) ), use noclip (-noclip )and other things")
    OthersTab:AddButton({
 	Name = "infiniteyield",
@@ -47,7 +41,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
   	end    
 })
 MiscTab:AddSlider({
-    Name = "WalkSpeed",
+    Name = "walkspeed",
     Min = 0,
     Max = 50,
     Default = 16,
@@ -64,7 +58,7 @@ MiscTab:AddSlider({
     end    
 })
 MiscTab:AddSlider({ 
-	Name = "Jump Power", 
+	Name = "jump power", 
 	Min = 0,
 	Max = 150, 
 	Default = 50,
@@ -82,7 +76,7 @@ MiscTab:AddSlider({
 
 
 VisualTab:AddButton({
-   Name = "Artifact C (If nothing appears in your location, click again)",
+   Name = "artifact c",
    Callback = function()
        local BoolValue = Instance.new("BoolValue")
        BoolValue.Name = "WisdomArtifact"
@@ -113,7 +107,7 @@ end)
  }) -- Fecha o AddButton aqui
 
 TPTab:AddButton({
-	Name = "Teleport Energy",
+	Name = "teleport generator",
 	Callback = function()
         local targetPosition = Vector3.new(505, -7, -505)
         local function teleportPlayer()
@@ -136,7 +130,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport OBS",
+	Name = "teleport observatory",
 	Callback = function()
         local targetPosition = Vector3.new(428, 125, -1188)
         local function teleportPlayer()
@@ -159,7 +153,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Storage",
+	Name = "teleport warehouse",
 	Callback = function()
         local targetPosition = Vector3.new(-874, 59, -539)
         local function teleportPlayer()
@@ -182,7 +176,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Dock",
+	Name = "teleport dock",
 	Callback = function()
         local targetPosition = Vector3.new(-2035, 3, -1568)
         local function teleportPlayer()
@@ -205,7 +199,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Plane",
+	Name = "teleport plane",
 	Callback = function()
         local targetPosition = Vector3.new(-1996, 202, -520)
         local function teleportPlayer()
@@ -228,7 +222,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Hangar",
+	Name = "teleport hangar",
 	Callback = function()
         local targetPosition = Vector3.new(-1621, 21, -2332)
         local function teleportPlayer()
@@ -251,7 +245,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Artifact C",
+	Name = "teleport artifact c",
 	Callback = function()
         local targetPosition = Vector3.new(-752, 124, -3173)
         local function teleportPlayer()
@@ -274,7 +268,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Artifact D (NEED WEAPON)",
+	Name = "teleport artifact d (need weapon)",
 	Callback = function()
         local targetPosition = Vector3.new(-1772, -197, -1311)
         local function teleportPlayer()
@@ -297,7 +291,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Artifact B (NEED DIVING EQUIPMENT)",
+	Name = "teleport artifact b",
 	Callback = function()
         local targetPosition = Vector3.new(1400, -255, -1863)
         local function teleportPlayer()
@@ -320,7 +314,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Artifact A",
+	Name = "teleport artifact a",
 	Callback = function()
         local targetPosition = Vector3.new(-1354, -456, -1574)
         local function teleportPlayer()
@@ -343,7 +337,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Banker",
+	Name = "teleport bunker",
 	Callback = function()
         local targetPosition = Vector3.new(-1499, 203, -1491)
         local function teleportPlayer()
@@ -366,7 +360,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport Drone",
+	Name = "teleport drone",
 	Callback = function()
         local targetPosition = Vector3.new(-120, 247, -2798)
         local function teleportPlayer()
@@ -389,7 +383,7 @@ TPTab:AddButton({
   	end    
 })
 TPTab:AddButton({
-	Name = "Teleport LAB",
+	Name = "teleport facility",
 	Callback = function()
         local targetPosition = Vector3.new(-1782, -187, -1419)
         local function teleportPlayer()
