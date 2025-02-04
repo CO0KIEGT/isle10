@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/Orion/main/source"))()
 --main
 local Window = OrionLib:MakeWindow({Name = "cook's ball buster hub 6000", HidePremium = false, SaveConfig = true, ConfigFolder = "Isle 10 HUB"})
 --tabs
